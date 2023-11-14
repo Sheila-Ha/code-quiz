@@ -1,7 +1,7 @@
 # code-quiz
 
 ## Description
-  - This is a timed quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. This app will be neat, orderly and responsive to the users interface.
+  - What you will discover is an app that is a timed quiz with multiple-choice questions. This app will run in the browser and will feature effectively updated HTML and CSS run by JavaScript code. This app will be neat, orderly and responsive to the users interface.
 
   ### What are the aspects of my website?
     - Timed quiz
@@ -14,9 +14,9 @@
 
   - How to make a multiple choice quiz with a variety of different functions. While maintaining the proper responsiveness for the users interface. 
 
-  ### - 3 different views you might see depending on your screen size
-  * View of what quiz will look and feel like
-    ![Alt text]("C:\Users\slhan\repos\code-quiz\assets\images\04-web-apis-homework-demo.gif")
+  ### - What you are expected to see on your screen
+  * A view of what the quiz will look and feel like
+   ![Alt text](04-web-apis-homework-demo.gif)
 
   * 992 Min Width View
     ![Alt text](homepage_screenshot.png)
@@ -29,7 +29,7 @@
       - Click Create Repository 
 
   - ### Clone the repo to a folder on your machine
-      - Navagate to the directory you want to clone
+      - Navigate to the directory you want to clone
       - git clone https://github.com/url-TO_REPO_HERE
           - git clone command - it copies the repo from github  to your local computer
       - git clone https://github.com/YOUR-USERNAME/YOURREPOSITORY
@@ -37,7 +37,7 @@
 
          ![Alt text](image.png)
 
-  - ### Navition
+  - ### Navigation
       - Navigate to the folder in which you cloned your repo
       - Click on index.html file
       - Double click to open file
@@ -64,6 +64,15 @@
 ## Credits:
 The guide used:
  - [Instructions and Starter Code](https://git.bootcampcontent.com/University-of-Minnesota/UofM-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/01-HTML-Git-CSS/02-Challenge)
+ - 
+ - 
+ - 
+ - 
+ - 
+ -
+ -
+ -
+ 
 
 
 ## License:
