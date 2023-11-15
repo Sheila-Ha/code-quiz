@@ -3,9 +3,9 @@ var mainEl = document.getElementById('main');
 
 //Accessing element by id
 var firstQuestion = document.getElementById('first-question-ul');
-console.log(firstQuestionUL)
+console.log(firstQuestion)
 //Setting style of element
-firstQuestionUl.style.color = 'green';
-firstQuestionUl.style.backgroundColor = 'yellow'
+firstQuestion.style.color = 'green';
+firstQuestion.style.backgroundColor = 'yellow'
 
 

@@ -4,39 +4,58 @@
 }
 
 :root {
-    
+ --hue-neutral: 160;
+ --hue-wrong: 4;
+ --hue-correct: 93;
 }
 
 body {
-    background-color: white;
-    margin: 0;
+    --hue: var(--hue-neutral);
     padding: 0;
+    margin: 0;
     display: flex;
-    width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
-
+    background-color: hsl(var(--hue));
 }
 
+h1 {
+    text-align: center;
+}
 button {
     padding: 10px;
     margin: 24px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 15px;
     background-color: purple;
     color: white;
 }
+
+button.correct {
+    --hue: var(--hue-correct);
+}
+
+button.wrong {    
+--hue: var(--hue-wrong);
+}
+
 .container {
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
     height: 100px;
     text-align: center;
+    background-color: white;
 }
 
-.quiz {
-    margin-bottom: 20px;
+.btn-grid {
+    display: grid;
+    margin: 20px 0;
 }
+
+.btn {
+    --hue: 275;
+}
+
 
 #main {
     margin-bottom: 20px;
