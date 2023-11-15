@@ -1,8 +1,60 @@
+*, *::before, *::after {
+    box-sizing: ;
+    font-family: sans-serif;
+}
+
+:root {
+    
+}
 
 body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 
 }
 
-h1 {
-    font-size: 30px;
+button {
+    padding: 10px;
+    margin: 24px;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: purple;
+    color: white;
+}
+.container {
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.quiz {
+    margin-bottom: 20px;
+}
+
+#main {
+    margin-bottom: 20px;
+    font-size: 100px;
+    width: 100%;
+    height: 25px; 
+}
+
+#initials,
+
+#submit {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+
+  #response {
+    padding-bottom: 30px;
 }
