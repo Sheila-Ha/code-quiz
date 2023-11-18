@@ -1,7 +1,7 @@
 
 //When the start button is pushed the timer starts.
 
-var h1 = document.getElementsByTagName('h1')[0],
+var  = document.getElementsByTagName('h1')[0],
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
     clear = document.getElementById('clear'),
@@ -31,11 +31,7 @@ start.onclick = function(){
   start.disabled = true;
   timer();
 };
-//click stop
-stop.onclick = function(){
-  clearTimeout(t);
-  start.disabled = false;
-};
+
 
 
 
