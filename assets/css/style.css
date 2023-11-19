@@ -28,15 +28,11 @@ p {
 }
 
 button {
-    padding: 7px;
-    margin: 15px;
-    width: 20rem;
-    cursor: pointer;
-    font-size: 15px;
+  
+    font-size: 30px;
     background-color: purple;
     color: white;
-    align-items: center;
-    border-radius: 5px;
+    
 }
 
 button.correct {

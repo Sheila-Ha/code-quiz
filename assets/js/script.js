@@ -12,7 +12,7 @@
 var startButton = document.querySelector('#start-button');
 var timerEl = document.querySelector('#countdown');
 var question = document.querySelector('#question');
-var answers = document.querySelector('#answers');
+var currentQuestion=0;
 //questions for the quiz
 var questionsList= [
   {
@@ -66,23 +66,28 @@ function displayMessage() {
 }
 //questions start
 function showQuestion() {
-question.textContent = questionsList[0].question;
-var choiceList = questionsList[0].choices;
-var choiceHtml = '';
-for (var i = 0; i < choiceList.length; i++)
-{
-  // 1) Create button element
-  // 2) Use choicesList[i] as the text for the button
-  // 3) Add the button to choiceHtml
+  question.textContent = questionsList[0].question;
+  var choiceList = questionsList[0].choices;
+  for (var i = 0; i < choiceList.length; i++)
 
-  //choiceHtml+=choiceList[i];
-  // answers.textContent = choiceList[i];
-  //console.log()
-}
-// 4) Set answers.textContent to the choiceHtml
-
-return sum;
+  {
+    // 1) Create button element
+    var createButton= document.createElement('button');
+    
+    // 2) Use choicesList[i] as the text for the button
+    createButton.innerHTML= choiceList[i];
+    createButton.value=i;
+    createButton.addEventListener('click', checkAnswer);
+    // 3) Add the button to choiceHtml
+    document.getElementById('answers').appendChild(createButton);
+  }
 };
+
+function checkAnswer(event){
+  var userAnswer=event.target.value;
+  var choiceList = questionsList[0].choices;
+  var correctAnswer = choiceList[questionsList[0].answer];
+}
 
 var resetQuiz = function() {
 
