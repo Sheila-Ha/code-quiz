@@ -12,6 +12,7 @@
 var startButton = document.querySelector('#start-button');
 var timerEl = document.querySelector('#countdown');
 var question = document.querySelector('#question');
+var answer = document.querySelector('#correct-answer');
 var currentQuestion=0;
 //questions for the quiz
 var questionsList= [
@@ -85,8 +86,14 @@ function showQuestion() {
 
 function checkAnswer(event){
   var userAnswer=event.target.value;
-  var choiceList = questionsList[0].choices;
-  var correctAnswer = choiceList[questionsList[0].answer];
+  var correctAnswer = questionsList[0].answer;
+
+  if ( userAnswer == correctAnswer) {
+    answer.textContent = 'correct';
+  }
+  else {
+    answer.textContent = 'wrong';
+  }
 }
 
 var resetQuiz = function() {

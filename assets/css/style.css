@@ -32,15 +32,7 @@ button {
     font-size: 30px;
     background-color: purple;
     color: white;
-    
-}
-
-button.correct {
-
-}
-
-button.wrong {    
-    color: black;
+   
 }
 
 .container {
@@ -65,6 +57,10 @@ button.wrong {
     height: 25px; 
 } */
 
+#correct-answer {
+    font-size: 20px;
+    color: black;
+}
 #initials,
 
 #submit {
