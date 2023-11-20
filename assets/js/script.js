@@ -1,4 +1,4 @@
-
+//When the start button is pushed the timer starts.
 //Once start button is clicked times stars and question is displayed.
 //Once a question is answered you will go onto the next question until done.
 //When a question is answered incorrectly time will be subtracted from the clock.
@@ -7,14 +7,14 @@
 //Responsive for all media screen sizes
 
 
-//When the start button is pushed the timer starts.
 
+//In the document look up the following selector
 var startButton = document.querySelector('#start-button');
 var timerEl = document.querySelector('#countdown');
 var question = document.querySelector('#question');
 var answer = document.querySelector('#correct-answer');
 var currentQuestion=0;
-//questions for the quiz
+//questions, choices and answers for the quiz
 var questionsList= [
   {
     'question': 'Which of the following keywords is used to define a variable in Javascript?',
@@ -37,38 +37,49 @@ var questionsList= [
     'answer':0
   },
 ];
-
+//When the start button is pushed the timer starts.
+//Once start button is clicked the question is displayed.
 // add event listener to start countdown
-//startButton.addEventListener('click', countdown);   - one function, need two
+//startButton.addEventListener('click', countdown);   - is a single function, need two functions
+// on click - 3 functions happen
 startButton.addEventListener('click', function(){
+//on click the countdown starts
   countdown();
-  showQuestion();
+//on click the question is shown
+  showQuestion(0);
+//on click the start button is hidden
+  startButton.style.display = 'none';
 });
-
+//countdown starts with x seconds
 function countdown() {
+//time on clock when quiz starts= time left
   var timeLeft = 5;
+//timer to show time left in seconds
   timerEl.textContent = timeLeft + ' second(s) remaining';
-  
+//every x amount of time run this function
   var timeInterval = setInterval(function () {
+//decrease time left by 1
     timeLeft--;
-
+//timer writing text to say how much time is left
     timerEl.textContent = timeLeft + ' second(s) remaining';
-
+//check if time left reaches 0
     if (timeLeft === 0) {
-      timerEl.textContent = '';
+//clearInterval = stop timer (preventing time from running in the negative)
       clearInterval(timeInterval);
-      displayMessage();
+//time reaches 0 message is displayed 
+      timerEl.textContent = 'Quiz Completed'
     }
+//1 second = 1000 milliseconds
   }, 1000);
 }
-// message displayed when time expires
-function displayMessage() {
-  timerEl.textContent = 'Quiz Completed'
-}
+
 //questions start
-function showQuestion() {
-  question.textContent = questionsList[0].question;
-  var choiceList = questionsList[0].choices;
+//show current question
+function showQuestion(currentQuestion) {
+//question text, from question list
+  question.textContent = questionsList[currentQuestion].question;
+//
+  var choiceList = questionsList[currentQuestion].choices;
   for (var i = 0; i < choiceList.length; i++)
 
   {
@@ -83,10 +94,12 @@ function showQuestion() {
     document.getElementById('answers').appendChild(createButton);
   }
 };
-
+//task to be performed
 function checkAnswer(event){
+  document.getElementById('answers').innerHTML='';
+  var buttons = document.getElementsByTagName('button');
   var userAnswer=event.target.value;
-  var correctAnswer = questionsList[0].answer;
+  var correctAnswer = questionsList[currentQuestion].answer;
 
   if ( userAnswer == correctAnswer) {
     answer.textContent = 'correct';
@@ -96,11 +109,12 @@ function checkAnswer(event){
   }
 }
 
+
 var resetQuiz = function() {
 
 }
 
-
+//task to be performed
 function loadApplication() {
   document.getElementById('')
 }
