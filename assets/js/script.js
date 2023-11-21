@@ -18,6 +18,7 @@ var score = document.querySelector('#score');
 //time on clock when quiz starts= time left
 var timeLeft = 30;
 var timeInterval;
+var instructions = document.querySelector('#instructions');
 
 //questions, choices and answers for the quiz
 var questionsList= [
@@ -54,6 +55,8 @@ startButton.addEventListener('click', function(){
   showQuestion();
   //on click the start button is hidden
   startButton.style.display = 'none';
+  //hide instructions
+  instructions.innerHTML='';
 });
 
 var timeInterval;
@@ -135,13 +138,18 @@ function checkAnswer(event) {
 }
 //When a question is answered incorrectly time will be subtracted from the clock.
 //show score when quiz is completed
+//When all questions are completed or timer reaches zero the challenge is over.
+
 function scoreQuiz() {
   clearInterval(timeInterval);
+  question.innerHTML='';
   answer.innerHTML='';
-  score.innerText='YOUR SCORE IS ' + timeLeft;
+  score.innerHTML='<p>ALL DONE!!!</p><p>YOUR SCORE IS</p>' + timeLeft;
 }
 //When all questions are completed or timer reaches zero the challenge is over.
 //Upon challenge being completed you can save your initials and score.
+
+
 
 var resetQuiz = function() {
 

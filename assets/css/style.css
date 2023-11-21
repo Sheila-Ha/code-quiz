@@ -76,6 +76,10 @@ button {
     font-size: 50px;
     color: #affc41
 }
+#score p {
+    margin: 2rem 2rem;
+    font-size: 50px;
+}
 
 #initials {
 
