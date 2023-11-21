@@ -14,8 +14,10 @@ var timerEl = document.querySelector('#countdown');
 var question = document.querySelector('#question');
 var answer = document.querySelector('#correct-answer');
 var currentQuestion=0;
+var score = document.querySelector('#score');
 //time on clock when quiz starts= time left
 var timeLeft = 30;
+var timeInterval;
 
 //questions, choices and answers for the quiz
 var questionsList= [
@@ -42,9 +44,9 @@ var questionsList= [
 ];
 //When the start button is pushed the timer starts.
 //Once start button is clicked the question is displayed.
-// add event listener to start countdown
+//add event listener to start countdown
 //startButton.addEventListener('click', countdown);   - is a single function, need two functions
-// on click - 3 functions happen
+//on click - 3 functions happen
 startButton.addEventListener('click', function(){
   //on click the countdown starts
   countdown();
@@ -53,12 +55,14 @@ startButton.addEventListener('click', function(){
   //on click the start button is hidden
   startButton.style.display = 'none';
 });
+
+var timeInterval;
 //countdown starts with x seconds
 function countdown() {
   //timer to show time left in seconds
   timerEl.textContent = timeLeft + ' second(s) remaining';
   //every x amount of time run this function
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     //decrease time left by 1
     timeLeft--;
     //timer writing text to say how much time is left
@@ -110,7 +114,6 @@ function checkAnswer(event) {
   // if true display correct
   if ( userAnswer == correctAnswer) {
     answer.textContent = 'correct';
-    //TODO: add points to score
   }
   //if false display wrong and decrease time by 1000
   else {
@@ -121,7 +124,7 @@ function checkAnswer(event) {
   currentQuestion++;
   //1 second timeout, then current question ++ and call showQuestion
   setTimeout(function() {
-    if (currentQuestion > questionsList.length-1){
+    if (currentQuestion > questionsList.length-1) {
       scoreQuiz();
     }
     else {  
@@ -130,10 +133,15 @@ function checkAnswer(event) {
   }, 1000);  
 
 }
-
+//When a question is answered incorrectly time will be subtracted from the clock.
+//show score when quiz is completed
 function scoreQuiz() {
-  
+  clearInterval(timeInterval);
+  answer.innerHTML='';
+  score.innerText='YOUR SCORE IS ' + timeLeft;
 }
+//When all questions are completed or timer reaches zero the challenge is over.
+//Upon challenge being completed you can save your initials and score.
 
 var resetQuiz = function() {
 
