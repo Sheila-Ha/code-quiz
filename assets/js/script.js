@@ -46,14 +46,14 @@ startButton.addEventListener('click', function(){
   //on click the countdown starts
   countdown();
   //on click the question is shown
-  showQuestion(0);
+  showQuestion();
   //on click the start button is hidden
   startButton.style.display = 'none';
 });
 //countdown starts with x seconds
 function countdown() {
   //time on clock when quiz starts= time left
-  var timeLeft = 5;
+  var timeLeft = 30;
   //timer to show time left in seconds
   timerEl.textContent = timeLeft + ' second(s) remaining';
   //every x amount of time run this function
@@ -75,7 +75,7 @@ function countdown() {
 
 //questions start
 //show current question
-function showQuestion(currentQuestion) {
+function showQuestion() {
   //question text, from question list
   question.textContent = questionsList[currentQuestion].question;
   //choiceList(answers) to match with the questionList 
@@ -97,7 +97,7 @@ function showQuestion(currentQuestion) {
   }
 };
 //checking the answer the user selected(event) via click
-function checkAnswer(event){
+function checkAnswer(event) {
   //removes answer buttons from HTML
   document.getElementById('answers').innerHTML='';
   //var buttons = document.getElementsByTagName('button');
@@ -113,8 +113,22 @@ function checkAnswer(event){
   else {
     answer.textContent = 'wrong';
   }
+
+  currentQuestion++;
+  if (currentQuestion>questionsList.length){
+    scoreQuiz();
+  }
+  else {  
+    //3 second timeout, then current question ++ and call showQuestion
+    setTimeout(function() {
+      showQuestion();
+    }, 1000);
+  }
 }
 
+function scoreQuiz(){
+  
+}
 
 var resetQuiz = function() {
 

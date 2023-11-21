@@ -13,39 +13,40 @@ body {
    /* display: flex;*/
     justify-content: center;
     align-items: center;
-    background-color: rgb(74, 72, 72);
+    background-color: #3C1642;
     
 }
 
 h1 {
-    font-size: 50px;
-    margin-top: 5rem;
+    font-size: 70px;
+    margin-top: 2rem;
 }
 
 p {
-    font-size: 30px;
-    margin-top: 10rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 5rem;
+    color: #B2FF9E
 }
 
 button {
-  
     font-size: 30px;
-    background-color: purple;
-    color: white;
-    margin: 20px 10px;
-   
+    background-color: #AFFC41;
+    color: black;
+    margin: 50px 10px;
 }
 
 .container {
-    width: %;
     height: 100px;
     text-align: center;
-    background-color: yellow
+    background-color: #086375;
 }
+
 #countdown {
     text-align: center;
     font-size: 30px;
-    background: white; 
+    background: #1DD3B0;
+    color: #3C1642;
     width: 25%;
     margin: 2rem 10rem 2rem 5rem;
 }
@@ -59,13 +60,16 @@ button {
 } */
 #question {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: #1DD3B0;
     height: 50px;
     margin: 10px 20px;
+    padding-top: 5rem;
 }
 #correct-answer {
     margin: 50px 50px;
-    font-size: 20px;
-    color: black;
+    font-size: 50px;
+    color: orange;
 }
 #initials,
 
