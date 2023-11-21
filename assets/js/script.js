@@ -14,6 +14,9 @@ var timerEl = document.querySelector('#countdown');
 var question = document.querySelector('#question');
 var answer = document.querySelector('#correct-answer');
 var currentQuestion=0;
+//time on clock when quiz starts= time left
+var timeLeft = 30;
+
 //questions, choices and answers for the quiz
 var questionsList= [
   {
@@ -52,8 +55,6 @@ startButton.addEventListener('click', function(){
 });
 //countdown starts with x seconds
 function countdown() {
-  //time on clock when quiz starts= time left
-  var timeLeft = 30;
   //timer to show time left in seconds
   timerEl.textContent = timeLeft + ' second(s) remaining';
   //every x amount of time run this function
@@ -63,6 +64,7 @@ function countdown() {
     //timer writing text to say how much time is left
     timerEl.textContent = timeLeft + ' second(s) remaining';
     //check if time left reaches 0
+  
     if (timeLeft === 0) {
       //clearInterval = stop timer (preventing time from running in the negative)
       clearInterval(timeInterval);
@@ -108,25 +110,28 @@ function checkAnswer(event) {
   // if true display correct
   if ( userAnswer == correctAnswer) {
     answer.textContent = 'correct';
+    //TODO: add points to score
   }
-  //if false display wrong
+  //if false display wrong and decrease time by 1000
   else {
     answer.textContent = 'wrong';
+    timeLeft--;
   }
 
   currentQuestion++;
-  if (currentQuestion>questionsList.length){
-    scoreQuiz();
-  }
-  else {  
-    //3 second timeout, then current question ++ and call showQuestion
-    setTimeout(function() {
+  //1 second timeout, then current question ++ and call showQuestion
+  setTimeout(function() {
+    if (currentQuestion > questionsList.length-1){
+      scoreQuiz();
+    }
+    else {  
       showQuestion();
-    }, 1000);
-  }
+    }      
+  }, 1000);  
+
 }
 
-function scoreQuiz(){
+function scoreQuiz() {
   
 }
 
