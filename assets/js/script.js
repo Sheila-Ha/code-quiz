@@ -43,67 +43,73 @@ var questionsList= [
 //startButton.addEventListener('click', countdown);   - is a single function, need two functions
 // on click - 3 functions happen
 startButton.addEventListener('click', function(){
-//on click the countdown starts
+  //on click the countdown starts
   countdown();
-//on click the question is shown
+  //on click the question is shown
   showQuestion(0);
-//on click the start button is hidden
+  //on click the start button is hidden
   startButton.style.display = 'none';
 });
 //countdown starts with x seconds
 function countdown() {
-//time on clock when quiz starts= time left
+  //time on clock when quiz starts= time left
   var timeLeft = 5;
-//timer to show time left in seconds
+  //timer to show time left in seconds
   timerEl.textContent = timeLeft + ' second(s) remaining';
-//every x amount of time run this function
+  //every x amount of time run this function
   var timeInterval = setInterval(function () {
-//decrease time left by 1
+    //decrease time left by 1
     timeLeft--;
-//timer writing text to say how much time is left
+    //timer writing text to say how much time is left
     timerEl.textContent = timeLeft + ' second(s) remaining';
-//check if time left reaches 0
+    //check if time left reaches 0
     if (timeLeft === 0) {
-//clearInterval = stop timer (preventing time from running in the negative)
+      //clearInterval = stop timer (preventing time from running in the negative)
       clearInterval(timeInterval);
-//time reaches 0 message is displayed 
+      //time reaches 0 message is displayed 
       timerEl.textContent = 'Quiz Completed'
     }
-//1 second = 1000 milliseconds
+  //1 second = 1000 milliseconds
   }, 1000);
 }
 
 //questions start
 //show current question
 function showQuestion(currentQuestion) {
-//question text, from question list
+  //question text, from question list
   question.textContent = questionsList[currentQuestion].question;
-//
+  //choiceList(answers) to match with the questionList 
   var choiceList = questionsList[currentQuestion].choices;
+  //for loop, will repeat as long as i is less than then length
   for (var i = 0; i < choiceList.length; i++)
 
   {
     // 1) Create button element
     var createButton= document.createElement('button');
-    
-    // 2) Use choicesList[i] as the text for the button
+    // 2) Use choiceList[i]/answers as the text for the button
     createButton.innerHTML= choiceList[i];
+    //setting value of the button
     createButton.value=i;
+    //listening for when button is clicked - check answer
     createButton.addEventListener('click', checkAnswer);
     // 3) Add the button to choiceHtml
     document.getElementById('answers').appendChild(createButton);
   }
 };
-//task to be performed
+//checking the answer the user selected(event) via click
 function checkAnswer(event){
+  //removes answer buttons from HTML
   document.getElementById('answers').innerHTML='';
-  var buttons = document.getElementsByTagName('button');
+  //var buttons = document.getElementsByTagName('button');
+  //retrieving the value of target
   var userAnswer=event.target.value;
+  //pull from questionList the correctAnswer for the current question to complete if/else 
   var correctAnswer = questionsList[currentQuestion].answer;
-
+  // if true display correct
   if ( userAnswer == correctAnswer) {
     answer.textContent = 'correct';
   }
+  //if false display wrong
   else {
     answer.textContent = 'wrong';
   }
@@ -114,7 +120,7 @@ var resetQuiz = function() {
 
 }
 
-//task to be performed
+//load quiz
 function loadApplication() {
   document.getElementById('')
 }
