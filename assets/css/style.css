@@ -99,12 +99,14 @@ button {
   padding-bottom: 30px;
 }
 
+#high-scores {
+    font-size: 30px;
+    
+}
+
 .initials {
     font-size: 25px;
     font-family: sans-serif;
     margin-left: 5px;
-    
-    
-
-
 }
+

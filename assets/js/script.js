@@ -19,14 +19,15 @@ var timeLeft = 30;
 var timeInterval;
 var instructions = document.querySelector("#instructions");
 var initials = document.querySelector("#initials-box");
-var submit = document.querySelector("#submit-button");
+var userInitials = document.querySelector("#initials");
+var submitButton = document.querySelector("#submit-button");
 
 //questions, choices and answers for the quiz
 var questionsList = [
   {
     question:
       "Which of the following keywords is used to define a variable in Javascript?",
-    choices: ["for", "let", "var", "go"],
+    choices: ["for", "is", "var", "go"],
     answer: 2
   },
   {
@@ -40,9 +41,9 @@ var questionsList = [
     answer: 3
   },
   {
-    question: "If a given property if valid, what keyword will be used?",
+    question: "If a given property is valid, what keyword will be used?",
     choices: ["in", "true", "exists", "about"],
-    answer: 0
+    answer: 1
   }
 ];
 //When the start button is pushed the timer starts.
@@ -85,7 +86,7 @@ function countdown() {
     }
     //1 second = 1000 milliseconds
   }, 1000);
-}
+};
 
 //questions start
 //show current question
@@ -108,8 +109,8 @@ function showQuestion() {
     document.getElementById("answers").appendChild(createButton);
     //hide displayed correct/wrong
     answer.textContent = "";
-  }
-}
+  };
+};
 //checking the answer the user selected(event) via click
 function checkAnswer(event) {
   //removes answer buttons from HTML
@@ -127,18 +128,19 @@ function checkAnswer(event) {
   else {
     answer.textContent = "wrong";
     timeLeft--;
-      }
+      };
 
   currentQuestion++;
-  //1 second timeout, then current question ++ and call showQuestion
+  // 1/2 second timeout, then current question ++ and call showQuestion
   setTimeout(function () {
     if (currentQuestion > questionsList.length - 1) {
       scoreQuiz();
     } else {
       showQuestion();
     }
-  }, 1000);
-}
+  // 1/2 second timer to display correct/wrong  
+  }, 500);
+};
 //When a question is answered incorrectly time will be subtracted from the clock.
 //show score when quiz is completed
 //When all questions are completed or timer reaches zero the challenge is over.
@@ -153,14 +155,21 @@ function scoreQuiz() {
   score.innerHTML = "<p>ALL DONE!!!</p><p>YOUR SCORE IS</p>" + timeLeft;
   //box to enter initials
   initials.style.display = 'block';
-}
+};
 //When all questions are completed or timer reaches zero the challenge is over.
 //Upon challenge being completed you can save your initials and score.
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  //create user initials from submission
+  var submitButtonInitials = userInitials.value.trim();
+  //submission to local storage
+  localStorage.setItem("initials", JSON.stringify(submitButtonInitials));
+  loadHighScores();
+});
 
-function initials() {
-  //enter your initials
-  //initials.textContent = 'Enter your initials';
-  //timerEl.textContent = timeLeft + ' second(s) remaining';
+function loadHighScores() {
+  renderHighScores();
+  //alert(localStorage.getItem("initials"));
 }
 
 var resetQuiz = function () {};
