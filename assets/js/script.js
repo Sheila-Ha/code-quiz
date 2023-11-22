@@ -13,11 +13,13 @@ var question = document.querySelector("#question");
 var answer = document.querySelector("#correct-answer");
 var currentQuestion = 0;
 var score = document.querySelector("#score");
+var answerButtons = document.getElementById("answers");
 //time on clock when quiz starts= time left
 var timeLeft = 30;
 var timeInterval;
 var instructions = document.querySelector("#instructions");
 var initials = document.querySelector("#initials-box");
+var submit = document.querySelector("#submit-button");
 
 //questions, choices and answers for the quiz
 var questionsList = [
@@ -77,6 +79,9 @@ function countdown() {
       clearInterval(timeInterval);
       //time reaches 0 message is displayed
       timerEl.textContent = "Quiz Completed";
+      //time reaches 0 answer hide
+      answerButtons.innerHTML = "";
+      scoreQuiz();
     }
     //1 second = 1000 milliseconds
   }, 1000);
@@ -101,12 +106,14 @@ function showQuestion() {
     createButton.addEventListener("click", checkAnswer);
     // 3) Add the button to choiceHtml
     document.getElementById("answers").appendChild(createButton);
+    //hide displayed correct/wrong
+    answer.textContent = "";
   }
 }
 //checking the answer the user selected(event) via click
 function checkAnswer(event) {
   //removes answer buttons from HTML
-  document.getElementById("answers").innerHTML = "";
+  answerButtons.innerHTML = "";
   //var buttons = document.getElementsByTagName('button');
   //retrieving the value of target
   var userAnswer = event.target.value;
@@ -120,7 +127,7 @@ function checkAnswer(event) {
   else {
     answer.textContent = "wrong";
     timeLeft--;
-  }
+      }
 
   currentQuestion++;
   //1 second timeout, then current question ++ and call showQuestion
@@ -144,6 +151,7 @@ function scoreQuiz() {
   answer.innerHTML = "";
   //display message when quiz is finished
   score.innerHTML = "<p>ALL DONE!!!</p><p>YOUR SCORE IS</p>" + timeLeft;
+  //box to enter initials
   initials.style.display = 'block';
 }
 //When all questions are completed or timer reaches zero the challenge is over.

@@ -64,7 +64,7 @@
 ## Credits:
 The guide used:
  - [Instructions and Starter Code](https://git.bootcampcontent.com/University-of-Minnesota/UofM-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/01-HTML-Git-CSS/02-Challenge)
- - 
+ -  [input type=submit] (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)
  - 
  - 
  - 
