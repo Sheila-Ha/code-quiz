@@ -1,7 +1,9 @@
 # code-quiz
 
 ## Description
-  - What you will discover is an app that is a timed quiz with multiple-choice questions. This app will run in the browser and will feature effectively updated HTML and CSS run by JavaScript code. This app will be neat, orderly and responsive to the users interface.
+  - You will be experiencing a multiple-choice questions. It will run in the browser and will feature effectively updated HTML, CSS and ran by JavaScript code while being media responsive. This app will be simple and clean for users to experience.
+
+    * What I learned was how to combine Javascript to HTML and CSS. I have learned to use console.log to help debug issues as I am writing code. I have continued to practice and build on my skill set thus far. I have continued to incorporate media responsiveness and work through those oddities.
 
   ### What are the aspects of my website?
     - Timed quiz
@@ -11,8 +13,6 @@
     - When all questions are completed or timer reaches zero the challenge is over.
     - Upon challenge being completed you can save your initials and score.
     - Responsive for all media screen sizes
-
-  - How to make a multiple choice quiz with a variety of different functions. While maintaining the proper responsiveness for the users interface. 
 
   ### - What you are expected to see on your screen
 

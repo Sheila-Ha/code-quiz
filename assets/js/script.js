@@ -175,7 +175,9 @@ submitButton.addEventListener("click", function(event) {
   userInitials.value = "";
 //load highscores before you add the next quiz result
   highScores = JSON.parse(localStorage.getItem("initials"));
-
+  if(highScores == null){
+    highScores = [];
+  }
   //add user initials to highscores
   highScores.push(userScore);
   //submission to local storage
