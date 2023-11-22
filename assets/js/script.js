@@ -163,11 +163,14 @@ function scoreQuiz() {
 //Upon challenge being completed you can save your initials and score.
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
+  submitButton.setAttribute("disable","");
   //create user initials from submission
   var userScore = {
     initials: userInitials.value.trim(),
     score: timeLeft
   }
+  //clear out user initials once submitted
+  userInitials.value = "";
 //load highscores before you add the next quiz result
   highScores = JSON.parse(localStorage.getItem("initials"));
 
@@ -186,18 +189,20 @@ function loadHighScores() {
   allScores.reverse();
   for (var i = 0; i < allScores.length; i++) {
     var li = document.createElement("li");
-    //highscorers initials + their scores
+    //high scorers initials + their scores
     li.textContent = allScores[i].initials + " - " + allScores[i].score;
     scoresList.appendChild(li);
+
   }
 } 
-
+//return back to beginning of start quiz, timer resets
 goBackButton.addEventListener("click", function () {
   window.location.reload();
 });
+//clears out high scores recorded
 clearHSButton.addEventListener("click", function () {
   scoresList.innerHTML = "";
-  //start over and store new high scores
+  //start over and stores new high scores
   highScores = [];
   localStorage.setItem("initials", JSON.stringify(highScores));
 });

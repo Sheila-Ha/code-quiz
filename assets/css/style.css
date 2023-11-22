@@ -34,6 +34,9 @@ button {
   margin: 50px 10px;
 }
 
+h2 {
+    display: none;
+}
 .container {
   height: 65px;
   text-align: center;
@@ -87,13 +90,13 @@ button {
     display: none;
 }
 
-#submit {
+/*#submit {
   width: 80%;
   padding: 12px 20px;
   margin: 8px 20px;
   box-sizing: border-box;
   font-size: 18px;
-}
+}*/
 
 #response {
   padding-bottom: 30px;
@@ -101,8 +104,16 @@ button {
 
 #high-scores {
     font-size: 30px;
-    
+
 }
+
+/*#go-back {
+    display: none {
+}
+
+#clear-high-scores {
+    display: none;
+}*/
 
 .initials {
     font-size: 25px;

@@ -69,7 +69,7 @@ The guide used:
  - [Array push](https://www.w3schools.com/jsref/jsref_push.asp)
  - [Array sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
  - [Array reverse](https://www.w3schools.com/jsref/jsref_reverse.asp)
- -
+ - [disable button](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute#examples)
  -
  -
  
