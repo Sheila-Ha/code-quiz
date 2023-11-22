@@ -15,11 +15,21 @@
   - How to make a multiple choice quiz with a variety of different functions. While maintaining the proper responsiveness for the users interface. 
 
   ### - What you are expected to see on your screen
-  * A view of what the quiz will look and feel like
-   ![Alt text](04-web-apis-homework-demo.gif)
 
-  * 992 Min Width View
-    ![Alt text](homepage_screenshot.png)
+  * A view of what the start of the quiz will look like
+    ![Alt text](image.png)
+  * A look of what quiz in action will look like
+    ![Alt text](image-2.png)
+  * Correct answer response
+    ![Alt text](image-3.png)
+  * Wrong answer response
+    ![Alt text](image-4.png)
+
+
+
+
+  * If the timer reaches 0 time left, quiz completed, score 0
+   ![Alt text](image-1.png)
 
 ## Installation:
   - ### Create a new repo on GitHub
@@ -70,8 +80,9 @@ The guide used:
  - [Array sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
  - [Array reverse](https://www.w3schools.com/jsref/jsref_reverse.asp)
  - [disable button](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute#examples)
- -
- -
+ - [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#examples)
+ - [For](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
+
  
 
 

@@ -142,7 +142,7 @@ function checkAnswer(event) {
       showQuestion();
     }
   // 1/2 second timer to display correct/wrong  
-  }, 500);
+  }, 5000);
 };
 //When a question is answered incorrectly time will be subtracted from the clock.
 //show score when quiz is completed
