@@ -17,19 +17,29 @@
   ### - What you are expected to see on your screen
 
   * A view of what the start of the quiz will look like
-    ![Alt text](image.png)
+   ![Alt text](image-1.png)
+
+
   * A look of what quiz in action will look like
     ![Alt text](image-2.png)
+
+
   * Correct answer response
-    ![Alt text](image-3.png)
+   ![Alt text](image-3.png)
+
+
   * Wrong answer response
     ![Alt text](image-4.png)
 
 
+  * Your score upon last question answered
+    ![Alt text](image-6.png)
 
 
-  * If the timer reaches 0 time left, quiz completed, score 0
-   ![Alt text](image-1.png)
+  * If the timer reaches 0 before you finish = quiz completed, score 0
+  ![Alt text](image-7.png)
+
+  * 
 
 ## Installation:
   - ### Create a new repo on GitHub
@@ -44,8 +54,8 @@
           - git clone command - it copies the repo from github  to your local computer
       - git clone https://github.com/YOUR-USERNAME/YOURREPOSITORY
           - Your command line should respond as below.
+          ![Alt text](image.png)
 
-         ![Alt text](image.png)
 
   - ### Navigation
       - Navigate to the folder in which you cloned your repo
@@ -54,11 +64,14 @@
 
 ## Features:
   - Multiple choice quiz
-  - Web Accessibility
-  git
-  - 100% responsive site
+  - A time with 30 seconds will start on the click of the start button
+  - A response of correct/wrong after each question is answered
+  - Lost time for wrong answer
+  - High Scores
+  - Clear high scores
 
 ## Built with and deployed with:
+  - JavaScript
   - HTML
   - CSS
   - Visual Studios Code
@@ -68,7 +81,7 @@
 ## Usage:
   - On your machine navigate to the folder you created.
   - Locate the Index.html file in your browser.
-  - https://sheila-ha.github.io/Portfolio/
+  - https://sheila-ha.github.io/code-quiz/
   - https://github.com/Sheila-Ha/code-quiz
 
 ## Credits:
@@ -81,7 +94,12 @@ The guide used:
  - [Array reverse](https://www.w3schools.com/jsref/jsref_reverse.asp)
  - [disable button](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute#examples)
  - [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#examples)
- - [For](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
+ - [Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_methods)
+ - [Loops & iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
+- [Coolers- found color scheme](https://coolors.co/palettes/trending)
+- [scoring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variable_scope)
+- [Display none](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+
 
  
 

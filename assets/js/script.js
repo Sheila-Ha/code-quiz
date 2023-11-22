@@ -24,6 +24,7 @@ var submitButton = document.querySelector("#submit-button");
 var goBackButton = document.querySelector("#go-back");
 var clearHSButton = document.querySelector("#clear-high-scores");
 var scoresList = document.querySelector("#scores-list");
+var scoresBox = document.querySelector("#high-scores");
 var highScores = [];
 //questions, choices and answers for the quiz
 var questionsList = [
@@ -142,7 +143,7 @@ function checkAnswer(event) {
       showQuestion();
     }
   // 1/2 second timer to display correct/wrong  
-  }, 5000);
+  }, 500);
 };
 //When a question is answered incorrectly time will be subtracted from the clock.
 //show score when quiz is completed
@@ -192,8 +193,8 @@ function loadHighScores() {
     //high scorers initials + their scores
     li.textContent = allScores[i].initials + " - " + allScores[i].score;
     scoresList.appendChild(li);
-
   }
+  scoresBox.style.display = 'block';
 } 
 //return back to beginning of start quiz, timer resets
 goBackButton.addEventListener("click", function () {
