@@ -17,7 +17,7 @@ var score = document.querySelector("#score");
 var timeLeft = 30;
 var timeInterval;
 var instructions = document.querySelector("#instructions");
-var initials = document.querySelector("initials");
+var initials = document.querySelector("#initials-box");
 
 //questions, choices and answers for the quiz
 var questionsList = [
@@ -144,6 +144,7 @@ function scoreQuiz() {
   answer.innerHTML = "";
   //display message when quiz is finished
   score.innerHTML = "<p>ALL DONE!!!</p><p>YOUR SCORE IS</p>" + timeLeft;
+  initials.style.display = 'block';
 }
 //When all questions are completed or timer reaches zero the challenge is over.
 //Upon challenge being completed you can save your initials and score.
