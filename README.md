@@ -54,7 +54,7 @@
           - git clone command - it copies the repo from github  to your local computer
       - git clone https://github.com/YOUR-USERNAME/YOURREPOSITORY
           - Your command line should respond as below.
-          ![Alt text](image.png)
+          ![Alt text](assets/images/clone-response.png)
 
 
   - ### Navigation
