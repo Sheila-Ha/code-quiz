@@ -21,7 +21,10 @@ var instructions = document.querySelector("#instructions");
 var initials = document.querySelector("#initials-box");
 var userInitials = document.querySelector("#initials");
 var submitButton = document.querySelector("#submit-button");
-
+var goBackButton = document.querySelector("#go-back");
+var clearHSButton = document.querySelector("#clear-high-scores");
+var scoresList = document.querySelector("#scores-list");
+var highScores = [];
 //questions, choices and answers for the quiz
 var questionsList = [
   {
@@ -161,18 +164,43 @@ function scoreQuiz() {
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   //create user initials from submission
-  var submitButtonInitials = userInitials.value.trim();
+  var userScore = {
+    initials: userInitials.value.trim(),
+    score: timeLeft
+  }
+//load highscores before you add the next quiz result
+  highScores = JSON.parse(localStorage.getItem("initials"));
+
+  //add user initials to highscores
+  highScores.push(userScore);
   //submission to local storage
-  localStorage.setItem("initials", JSON.stringify(submitButtonInitials));
+  localStorage.setItem("initials", JSON.stringify(highScores));
   loadHighScores();
 });
 
 function loadHighScores() {
-  renderHighScores();
-  //alert(localStorage.getItem("initials"));
-}
+  var allScores = JSON.parse(localStorage.getItem("initials"));
+  // sort by score
+  allScores.sort((a, b) => a.score - b.score);
+  //reverse the order of scores so highest is at the top
+  allScores.reverse();
+  for (var i = 0; i < allScores.length; i++) {
+    var li = document.createElement("li");
+    //highscorers initials + their scores
+    li.textContent = allScores[i].initials + " - " + allScores[i].score;
+    scoresList.appendChild(li);
+  }
+} 
 
-var resetQuiz = function () {};
+goBackButton.addEventListener("click", function () {
+  window.location.reload();
+});
+clearHSButton.addEventListener("click", function () {
+  scoresList.innerHTML = "";
+  //start over and store new high scores
+  highScores = [];
+  localStorage.setItem("initials", JSON.stringify(highScores));
+});
 
 //load quiz
 function loadApplication() {

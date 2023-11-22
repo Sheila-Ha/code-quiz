@@ -66,9 +66,9 @@ The guide used:
  - [Instructions and Starter Code](https://git.bootcampcontent.com/University-of-Minnesota/UofM-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/01-HTML-Git-CSS/02-Challenge)
  - [input type=submit](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)
  - [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
- - 
- - 
- - 
+ - [Array push](https://www.w3schools.com/jsref/jsref_push.asp)
+ - [Array sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+ - [Array reverse](https://www.w3schools.com/jsref/jsref_reverse.asp)
  -
  -
  -
