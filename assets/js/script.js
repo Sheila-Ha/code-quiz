@@ -30,23 +30,23 @@ var highScores = [];
 var questionsList = [
   {
     question:
-      "Which of the following keywords is used to define a variable in Javascript?",
-    choices: ["for", "is", "var", "go"],
+      "As of 2022 how many MN Twins are in the Hall of Fame?",
+    choices: ["40", "35", "37", "41"],
     answer: 2
   },
   {
-    question: "Javascript is what type of language?",
-    choices: ["style", "object-oriented", "static", "markup"],
+    question: "What MN Twin leads in home runs?",
+    choices: ["Mauer", "Killebrew", "Puckett", "Carew"],
     answer: 1
   },
   {
-    question: "How can a datatype be declared to be a constant type?",
-    choices: ["return", "function", "let", "const"],
+    question: "How many Twins pitchers have thrown no-hitters?",
+    choices: ["12", "8", "10", "7"],
     answer: 3
   },
   {
-    question: "If a given property is valid, what keyword will be used?",
-    choices: ["in", "true", "exists", "about"],
+    question: "Which MN Twin has the highest batting percentage?",
+    choices: ["Knoblauch", "Carew", "Yost", "Stone"],
     answer: 1
   }
 ];
@@ -164,7 +164,8 @@ function scoreQuiz() {
 //Upon challenge being completed you can save your initials and score.
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
-  submitButton.setAttribute("disable","");
+  //disabled submit button so it does not repopulate
+  submitButton.setAttribute("disabled","");
   //create user initials from submission
   var userScore = {
     initials: userInitials.value.trim(),

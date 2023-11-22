@@ -17,29 +17,29 @@
   ### - What you are expected to see on your screen
 
   * A view of what the start of the quiz will look like
-   ![Alt text](image-1.png)
+   ![Alt text](assets/images/beginning-of-quiz.png)
 
 
   * A look of what quiz in action will look like
-    ![Alt text](image-2.png)
+   ![Alt text](assets/images/1st-question.png)
 
 
   * Correct answer response
-   ![Alt text](image-3.png)
+   ![Alt text](assets/images/correct.png)
 
 
   * Wrong answer response
-    ![Alt text](image-4.png)
-
-
-  * Your score upon last question answered
-    ![Alt text](image-6.png)
+    ![Alt text](assets/images/wrong.png)
 
 
   * If the timer reaches 0 before you finish = quiz completed, score 0
-  ![Alt text](image-7.png)
+  ![Alt text](<assets/images/0 time - quiz done.png>)
 
-  * 
+  * Your score upon last question answered 
+  ![Alt text](assets/images/quiz-finished-with-seconds-remaining.png)
+
+  * High scores after you submit your initials
+  ![Alt text](assets/images/high-scores.png)
 
 ## Installation:
   - ### Create a new repo on GitHub
